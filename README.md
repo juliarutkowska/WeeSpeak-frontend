@@ -75,4 +75,3 @@ You can find the backend repository here:
 
 This project was created for educational and portfolio purposes.  
 Feel free to explore, use, or modify it as needed.
->>>>>>> 92792ab295d9c35d85a4a5e20a40918aa635b97f
