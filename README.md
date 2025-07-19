@@ -1,69 +1,78 @@
-# React + TypeScript + Vite
+# WeeSpeak – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern frontend application for an English language school website.  
+Built with **React**, **TypeScript**, and **Vite**.
 
-Currently, two official plugins are available:
+This project allows users (typically parents) to sign up their children for English courses via an online form.  
+The form connects to a REST API backend built in ASP.NET Core.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Course registration form with validation
+- Integration with a REST API backend
+- Client-side routing using `react-router-dom`
+- Pages: Home, Offer, Schedule, Contact, Signup
+- Simple structure, ready for styling with Tailwind CSS, CSS Modules, or Styled Components
+- Built with scalability and code clarity in mind
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- TypeScript
+- Vite
+- React Router DOM
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/weespeak-frontend.git
+cd weespeak-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+The app will be running at:  
+`http://localhost:5173`
+
+Make sure the backend API is also running at:  
+`http://localhost:5000`
+
+---
+
+## Backend Integration
+
+This frontend app sends registration form data to the backend endpoint:
+
+```http
+POST http://localhost:5000/api/registrations
+```
+
+The backend is built with ASP.NET Core Web API.  
+You can find the backend repository here:  
+[weespeak-backend](https://github.com/juliarutkowska/WeeSpeak-backend)
+
+---
+
+## License
+
+This project was created for educational and portfolio purposes.  
+Feel free to explore, use, or modify it as needed.
+>>>>>>> 92792ab295d9c35d85a4a5e20a40918aa635b97f
