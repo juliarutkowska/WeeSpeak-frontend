@@ -1,9 +1,9 @@
 const Footer = () => {
     return (
-        <footer className="bg-white border-t">
-            <div className="max-w-5xl mx-auto px-4 py-4 text-xs text-slate-500 flex justify-between items-center">
-                <span>© {new Date().getFullYear()} WeeSpeak. Wszystkie prawa zastrzeżone.</span>
-                <span>Luzino • język angielski dla dzieci i młodzieży</span>
+        <footer className="bg-navy text-cream mt-16">
+            <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-2 text-sm">
+                <p>© 2025 WeeSpeak. Wszystkie prawa zastrzeżone.</p>
+                <p className="text-cream/80">Luzino • język angielski dla dzieci i młodzieży</p>
             </div>
         </footer>
     );

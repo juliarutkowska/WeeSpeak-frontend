@@ -1,68 +1,62 @@
 import { NavLink } from "react-router-dom";
 
-const baseLink =
-    "px-3 py-2 text-sm font-medium transition-colors hover:text-emerald-500";
-const activeLink = "text-emerald-600";
+const navItems = [
+    { label: "Strona główna", to: "/" },
+    { label: "Oferta", to: "/offer" },
+    { label: "Harmonogram", to: "/schedule" },
+    { label: "Kontakt", to: "/contact" },
+    { label: "Zapisy", to: "/signup" },
+];
 
 const Navbar = () => {
     return (
-        <header className="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-20">
-            <div className="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5">
-          <span className="text-2xl font-extrabold text-emerald-500 leading-none">
-            WeeSpeak
-          </span>
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wide">
-            szkoła języka angielskiego
-          </span>
-                </div>
+        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-navy/10">
+            <nav className="container flex items-center justify-between py-3 md:py-4 gap-4">
+                {/* Logo / nazwa */}
+                <NavLink to="/" className="flex items-center gap-2 md:gap-3">
+                    <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-primary text-cream grid place-items-center font-extrabold text-lg">
+                        W
+                    </div>
+                    <div className="leading-tight">
+                        <div className="font-extrabold text-base md:text-lg tracking-tight">
+                            WeeSpeak
+                        </div>
+                        <div className="text-[11px] md:text-xs text-navy/70 uppercase tracking-[0.12em]">
+                            szkoła języka angielskiego
+                        </div>
+                    </div>
+                </NavLink>
 
-                <nav className="flex flex-wrap justify-center gap-1.5">
-                    <NavLink
-                        to="/"
-                        end
-                        className={({ isActive }) =>
-                            `${baseLink} ${isActive ? activeLink : ""}`
-                        }
-                    >
-                        Strona główna
-                    </NavLink>
-                    <NavLink
-                        to="/oferta"
-                        className={({ isActive }) =>
-                            `${baseLink} ${isActive ? activeLink : ""}`
-                        }
-                    >
-                        Oferta
-                    </NavLink>
-                    <NavLink
-                        to="/harmonogram"
-                        className={({ isActive }) =>
-                            `${baseLink} ${isActive ? activeLink : ""}`
-                        }
-                    >
-                        Harmonogram
-                    </NavLink>
-                    <NavLink
-                        to="/kontakt"
-                        className={({ isActive }) =>
-                            `${baseLink} ${isActive ? activeLink : ""}`
-                        }
-                    >
-                        Kontakt
-                    </NavLink>
-                    <NavLink
-                        to="/zapisy"
-                        className={({ isActive }) =>
-                            `${baseLink} rounded-full border border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white ${
-                                isActive ? "bg-emerald-500 text-white" : ""
-                            }`
-                        }
-                    >
-                        Zapisy
-                    </NavLink>
-                </nav>
-            </div>
+                {/* Linki */}
+                <ul className="hidden sm:flex gap-2 md:gap-3 text-sm md:text-base">
+                    {navItems.map((item) => (
+                        <li key={item.to}>
+                            <NavLink
+                                to={item.to}
+                                end
+                                className={({ isActive }) =>
+                                    [
+                                        "px-3 py-2 rounded-full font-semibold transition whitespace-nowrap",
+                                        isActive
+                                            ? "bg-primary text-cream shadow-soft"
+                                            : "text-navy/80 hover:bg-cream hover:text-navy",
+                                    ].join(" ")
+                                }
+                            >
+                                {item.label}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Przycisk Zapisy na mobile */}
+                <NavLink
+                    to="/signup"
+                    className="sm:hidden px-3 py-2 rounded-full bg-primary text-cream text-sm font-semibold shadow-soft"
+                >
+                    Zapisy
+                </NavLink>
+            </nav>
         </header>
     );
 };
