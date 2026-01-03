@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeeSpeak - Zapisy </title>
+
+    <style>
+        :root{
+            --brick: #C03221;   /* Brick Ember */
+            --navy: #001427;    /* Prussian Blue */
+            --cream: #FDFCDC;   /* Light Yellow */
+            --violet: #E88EED;  /* Violet */
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        body{
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--navy);
+            background: linear-gradient(135deg, var(--cream), #fff);
+        }
+
+        .wrap{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .card{
+            width: 100%;
+            max-width: 780px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(0,20,39,0.12);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(0,20,39,0.14);
+            overflow: hidden;
+        }
+
+        .topbar{
+            padding: 18px 20px;
+            background: linear-gradient(90deg, var(--navy), #08253e);
+            color: var(--cream);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand{
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .brand strong{ font-size: 18px; letter-spacing: 0.2px; }
+        .brand span{ font-size: 12px; opacity: 0.9; }
+
+        .pill{
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            background: rgba(253,252,220,0.12);
+            border: 1px solid rgba(253,252,220,0.25);
+            padding: 8px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .content{
+            padding: 20px;
+        }
+
+        h1{
+            margin: 0 0 6px 0;
+            font-size: 28px;
+        }
+        p{
+            margin: 0 0 18px 0;
+            opacity: 0.9;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 640px){
+            .grid{ grid-template-columns: 1fr; }
+            h1{ font-size: 24px; }
+        }
+
+        label{
+            font-size: 12px;
+            font-weight: 600;
+            display: block;
+            margin: 0 0 6px 0;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,20,39,0.18);
+            background: #fff;
+            outline: none;
+            font-size: 14px;
+        }
+        input:focus, select:focus{
+            border-color: rgba(232,142,237,0.9);
+            box-shadow: 0 0 0 4px rgba(232,142,237,0.2);
+        }
+
+        .row{
+            margin-top: 14px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn{
+            border: 0;
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .btn-primary{
+            background: var(--brick);
+            color: var(--white);
+        }
+        .btn-primary:disabled{
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .btn-ghost{
+            background: transparent;
+            border: 1px solid rgba(0,20,39,0.18);
+            color: var(--navy);
+        }
+
+        .note{
+            font-size: 12px;
+            opacity: 0.75;
+        }
+
+        .status{
+            margin-top: 14px;
+            padding: 12px 12px;
+            border-radius: 12px;
+            display: none;
+            border: 1px solid rgba(0,20,39,0.12);
+            background: rgba(253,252,220,0.7);
+        }
+        .status.ok{
+            display: block;
+            border-color: rgba(0, 150, 0, 0.25);
+            background: rgba(0, 150, 0, 0.08);
+        }
+        .status.err{
+            display: block;
+            border-color: rgba(192,50,33,0.25);
+            background: rgba(192,50,33,0.08);
+        }
+
+        .footer{
+            padding: 14px 20px;
+            border-top: 1px solid rgba(0,20,39,0.08);
+            background: rgba(253,252,220,0.35);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 12px;
+        }
+
+        .kbd{
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background: rgba(0,20,39,0.06);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,20,39,0.12);
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="card">
+        <div class="topbar">
+            <div class="brand">
+                <strong>WeeSpeak</strong>
+                <span>szkoła języka angielskiego</span>
+            </div>
+            <div class="pill">
+                <span>Wersja na zaliczenie:</span>
+                <span class="kbd">czysty JS</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Zapisy na zajęcia</h1>"
+
+            <form id="signupForm">
+                <div class="grid">
+                    <div>
+                        <label for="firstName">Imię</label>
+                        <input id="firstName" name="firstName" placeholder="np. Julia" required />
+                    </div>
+
+                    <div>
+                        <label for="lastName">Nazwisko</label>
+                        <input id="lastName" name="lastName" placeholder="np. Rutkowska" required />
+                    </div>
+
+                    <div>
+                        <label for="parentPhoneNumber">Telefon rodzica</label>
+                        <input
+                                id="parentPhoneNumber"
+                                name="parentPhoneNumber"
+                                placeholder="np. 789456123"
+                                inputmode="tel"
+                                required
+                        />
+                    </div>
+
+                    <div>
+                        <label for="age">Wiek dziecka</label>
+                        <input id="age" name="age" placeholder="np. 8" inputmode="numeric" required />
+                    </div>
+
+                    <div>
+                        <label for="email">Adres e-mail</label>
+                        <input id="email" name="email" type="email" placeholder="np. xxx@gmail.com" required />
+                    </div>
+
+                    <div>
+                        <label for="selectedCourse">Kurs</label>
+                        <select id="selectedCourse" name="selectedCourse" required>
+                            <option value="">Wybierz kurs</option>
+                            <option value="4–6 lat">4–6 lat</option>
+                            <option value="7–9 lat">7–9 lat</option>
+                            <option value="Egzamin ósmoklasisty">Egzamin ósmoklasisty</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="note">
+                        API: <span class="kbd" id="apiInfo">—</span>
+                    </div>
+
+                    <div style="display:flex; gap:10px;">
+                        <button class="btn btn-ghost" type="button" id="fillDemo">Wypełnij demo</button>
+                        <button class="btn btn-primary" type="submit" id="submitBtn">Wyślij zgłoszenie</button>
+                    </div>
+                </div>
+
+                <div class="status" id="statusBox"></div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <div>© 2025 WeeSpeak</div>
+            <div>Luzino • język angielski dla dzieci i młodzieży</div>
+        </div>
+    </div>
+</div>
+
+<script src="./zapisy.js"></script>
+</body>
+</html>
