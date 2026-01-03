@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WeeSpeak – Schedule (Pure JS)</title>
+    <style>
+        :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+        body { margin: 0; background: #fafafa; color: #111; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .card { background: #fff; border: 1px solid #e6e6e6; border-radius: 16px; padding: 16px; }
+        h1 { margin: 0 0 12px; }
+        .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        input, select { padding: 10px; border-radius: 12px; border: 1px solid #ddd; }
+        .lesson { border-top: 1px solid #eee; padding: 12px 0; }
+        .lesson:first-of-type { border-top: 0; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1px solid #ddd; font-size: 12px; }
+        .muted { opacity: .75; font-size: 14px; }
+    </style>
+</head>
+<body>
+<main class="container">
+    <section class="card">
+        <h1>Schedule (Pure JavaScript)</h1>
+        <p class="muted">
+            Ten harmonogram jest zrobiony w <strong>czystym JavaScript</strong> (bez Reacta / frameworków).
+        </p>
+
+        <div class="row">
+            <label>
+                Filter by day
+                <select id="dayFilter">
+                    <option value="all">All</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+            </label>
+
+            <label>
+                Search group
+                <input id="searchInput" placeholder="e.g. 7–9" />
+            </label>
+        </div>
+
+        <div id="scheduleList"></div>
+    </section>
+</main>
+
+<script src="./schedule.js"></script>
+</body>
+</html>
