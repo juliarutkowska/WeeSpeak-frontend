@@ -1,9 +1,12 @@
+//Harmonogram jest osobnym modułem w folderze public,
+//napisanym w czystym JavaScript i osadzonym w aplikacji React przez iframe
+
 export default function Schedule() {
     return (
         <div className="mx-auto max-w-5xl px-4 py-8">
             <h1 className="text-3xl font-bold mb-4">Schedule</h1>
             <p className="mb-6 opacity-80">
-                Below is a schedule module implemented in <strong>pure JavaScript</strong> (no frameworks).
+                Below is a schedule module implemented in <strong>pure JavaScript</strong>.
             </p>
 
             <iframe
