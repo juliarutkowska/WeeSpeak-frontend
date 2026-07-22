@@ -21,14 +21,14 @@ const Contact = () => {
                     <div className="space-y-2 text-navy/80">
                         <p>
                             <span className="font-semibold text-navy">Telefon:</span>{" "}
-                            <a href="tel:+48000000000" className="text-primary underline">
-                                +48 000 000 000
+                            <a href="tel:+48663131803" className="text-primary underline">
+                                +48 663 131 803
                             </a>
                         </p>
                         <p>
                             <span className="font-semibold text-navy">E-mail:</span>{" "}
-                            <a href="mailto:weespeak@example.com" className="text-primary underline">
-                                weespeak@example.com
+                            <a href="mailto:weespeak123@gmail.com" className="text-primary underline">
+                                weespeak123@gmail.com
                             </a>
                         </p>
                         <p>
@@ -49,9 +49,9 @@ const Contact = () => {
                     </h2>
 
                     <div className="space-y-2 text-navy/80">
-                        <p><span className="font-semibold text-navy">Mon–Fri:</span> 12:00 – 18:00</p>
-                        <p><span className="font-semibold text-navy">Sat:</span> 10:00 – 13:00</p>
-                        <p><span className="font-semibold text-navy">Sun:</span> closed</p>
+                        <p><span className="font-semibold text-navy">Pon-Pt:</span> 8:00 – 18:00</p>
+                        <p><span className="font-semibold text-navy">Sob:</span> zamknięte</p>
+                        <p><span className="font-semibold text-navy">Nd:</span> zamknięte</p>
                     </div>
 
                     <div className="text-sm text-navy/70">
@@ -62,7 +62,7 @@ const Contact = () => {
 
             {/* Map */}
             <div className="rounded-card bg-white border border-navy/15 shadow-soft p-6">
-                <h3 className="text-xl font-bold mb-2 text-center">Location</h3>
+                <h3 className="text-xl font-bold mb-2 text-center">Lokalizacja</h3>
                 <p className="text-navy/70 mb-4 text-center">
                     Tutaj jesteśmy
                 </p>
