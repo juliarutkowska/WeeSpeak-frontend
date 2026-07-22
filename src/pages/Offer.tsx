@@ -39,7 +39,7 @@ const Offer = () => {
             {/* Header */}
             <div className="rounded-card bg-white border border-navy/15 shadow-soft p-8 md:p-10 text-center">
                 <h1 className="text-4xl font-extrabold mb-3">
-                    Offer
+                    Oferta
                 </h1>
                 <p className="text-navy/70 text-lg max-w-3xl mx-auto">
                     Uczymy w małych grupach, w spokojnej atmosferze i z naciskiem na praktyczne użycie języka.
@@ -69,7 +69,7 @@ const Offer = () => {
                             to="/signup"
                             className="mt-6 inline-block text-center px-4 py-2 rounded-full bg-navy text-cream font-semibold hover:bg-navy/90 transition"
                         >
-                            Sign up
+                            Zapisy
                         </Link>
                     </div>
                 ))}
@@ -79,7 +79,7 @@ const Offer = () => {
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="rounded-card bg-cream border border-navy/15 shadow-soft p-6">
                     <h3 className="text-xl font-bold mb-2 text-navy">
-                        How do classes look?
+                        Jak wyglądają zajęcia?
                     </h3>
                     <p className="text-navy/80 leading-relaxed">
                         Stawiamy na aktywność, mówienie i pozytywną atmosferę. Dzieci uczą się
@@ -90,12 +90,12 @@ const Offer = () => {
 
                 <div className="rounded-card bg-violet/20 border border-violet shadow-soft p-6">
                     <h3 className="text-xl font-bold mb-2 text-navy">
-                        Location & schedule
+                        Lokalizacja i harmonogram
                     </h3>
                     <p className="text-navy/80 leading-relaxed">
                         Zajęcia odbywają się w Luzinie. Aktualne godziny znajdziesz w{" "}
                         <Link to="/schedule" className="text-primary underline font-semibold">
-                            schedule
+                            harmonogram
                         </Link>
                         .
                     </p>
@@ -105,7 +105,7 @@ const Offer = () => {
             {/* CTA */}
             <div className="rounded-card bg-white border border-navy/15 shadow-soft p-8 text-center">
                 <h3 className="text-2xl font-bold mb-2">
-                    Questions?
+                    Pytania?
                 </h3>
                 <p className="text-navy/70 mb-4">
                     Chętnie pomożemy dobrać odpowiednią grupę.
@@ -115,13 +115,13 @@ const Offer = () => {
                         to="/contact"
                         className="px-6 py-3 rounded-full border-2 border-primary text-primary bg-white font-semibold hover:bg-primary/10 transition"
                     >
-                        Contact
+                        Kontakt
                     </Link>
                     <Link
                         to="/signup"
                         className="px-6 py-3 rounded-full bg-primary text-cream font-semibold hover:bg-primary/80 transition"
                     >
-                        Sign up
+                        Zapisz się!
                     </Link>
                 </div>
             </div>
